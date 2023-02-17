@@ -13,17 +13,21 @@
 <!-- Google tag (gtag.js) -->
 <script>
   
-  const gaScript = document.createElement("script");
-  gaScript.type = "text/javascript";
-  gaScript.setAttribute("async", "true");
-  gaScript.setAttribute("src", "https://www.googletagmanager.com/gtag/js?id=G-PVVZTQXFR6");
-  document.documentElement.firstChild.appendChild(gaScript);
+  // Dynamic loading of gtag
+  if (!window.gtag) {
+    const gaScript = document.createElement("script");
+    gaScript.type = "text/javascript";
+    gaScript.setAttribute("async", "true");
+    gaScript.setAttribute("src", "https://www.googletagmanager.com/gtag/js?id=G-PVVZTQXFR6");
+    document.documentElement.firstChild.appendChild(gaScript);
   
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
 
-  gtag('config', 'G-PVVZTQXFR6');
+    gtag('config', 'G-PVVZTQXFR6');
+  }
+    
 </script>  
   
 </body>
