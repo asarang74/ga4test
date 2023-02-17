@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>GA4 demo website - dynamic load</title>
+</head>
+<body>
+  Test GA4 site dynamic
+  <br/><br/>
+  <button id="btnEstimate" onclick="gtag('event','estimate')">Online estimate</button>
+  <br/><br/>
+  <button id="btnBookAppt" onclick="gtag('event','book-appointment')">Book appointment</button>
+  
+<!-- Google tag (gtag.js) -->
+<script>
+  
+  const gaScript = document.createElement("script");
+  gaScript.type = "text/javascript";
+  gaScript.setAttribute("async", "true");
+  ga.setAttribute("src", "https://www.googletagmanager.com/gtag/js?id=G-PVVZTQXFR");
+  document.documentElement.firstChild.appendChild(gaScript);
+  
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-PVVZTQXFR6');
+</script>  
+  
+</body>
+</html>
